@@ -23,7 +23,7 @@ I make these choices:
 *  [passport](http://passportjs.org/) for auth
 *  [EJS locals](https://github.com/RandomEtc/ejs-locals) templates for server-side stuff.
 *  I like to do most things client-side with REST, but keep my options open for static HTML. For example, I make a `get('/login')` that serves an HTML login form & `post('/login')` that handles the form POST & JSON AJAX POST requests, both.
-*  I try to make things easy to disable by deleting files. For example,  if you don't need passport auth, just delete server/routes/auth.js.
+*  I try to make things easy to disable by deleting files, and easy to drop into new projects. For example, if you don't need passport auth, just delete server/routes/auth.js.
 *  Tests are good practice, but I delete them when I need to get something up quick and the tests are totally bogus, like in the case of yeoman. You should probably add some tests once you get things fleshed out. I recommend [mocha](http://visionmedia.github.io/mocha/)+[chai](http://chaijs.com/)+[karma](http://karma-runner.github.io/), so you can be all easy-breazy about testing style, and not lock your fellow devs (or your daydrunk-self) into a particular style. This will make it so everyone can write TDD, BDD, QUnit, assert, expect, should, etc tests in whatever style makes them happy.
 
 ## new app setup
@@ -39,15 +39,13 @@ In your project, you can delete everything above this line, and get a pro-lookin
 
 ## installation
 
-You just downloaded the repo, and probably want to get the project going on a local dev-server and deploy it to a remote webserver.  I will provide directions for [Heroku](http://www.heroku.com/) since it's super-easy & free for small instances. For other deploy methods, you will probably have to mess with `package.json` or `server/index.js`.
-
 Make sure [node](http://nodejs.org/) is installed. `npm install` in the project directory will do all the installation of dependencies, server-side & client-side.
 
 ## read more
 
 You will need to know about these things to be super-effective with this codebase:
 
-*  [brunch](http://brunch.io/) to build the minified production version & to do continuosly build the app to `generated/` from it's source files in `front/`
+*  [brunch](http://brunch.io/) to build the minified production version & to continuosly build the app to `generated/` from it's source files in `front/`
 *  [express 4](http://expressjs.com/) the server uses this. See files in `server/` to work out how it all goes together.
 *  [Mongoose](http://mongoosejs.com/) for working with mongodb
 *  [passport](http://passportjs.org/) for auth

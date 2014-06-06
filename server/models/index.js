@@ -7,9 +7,15 @@ var mongoose = require("mongoose"),
 // add Email & Url types
 mongooseTypes.loadTypes(mongoose);
 
+if (!process.env.MONGOHQ_URL && !process.env.MONGOLAB_URI && !process.env.MONGOSOUP_URL && !process.env.MONGO_URI) {
+    console.log('You need to set MONGOHQ_URL, MONGOLAB_URI, MONGOSOUP_URL, or MONGO_URI environment variables. Please see README.md for more info.')
+    process.exit(1);
+}
+
+var mongo_url = process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || process.env.MONGOSOUP_URL || process.env.MONGO_URI;
 
 // pre-configure mongoose
-mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.connect(mongo_url);
 mongoose.connection.on('error', function(e) {
     console.log(chalk.red('Mongoose Error:'), e)
 });
