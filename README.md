@@ -33,7 +33,7 @@ I make these choices:
 *  `npm install`
 *  drink mimosas till you puke, while coding the next useful thing
 
-In your project, you can delete everything above this line, and get a pro-looking README, with no reference to this skeleton, that should be a enough for even a newb developer to get started and understand how stuff fits together.
+In your project, you can delete everything above this line, and get a pro-looking README, with no reference to this skeleton, that should be a enough for even a fresh-on-the-project developer to get started and understand how stuff fits together.
 
 # <-- SNIP -->
 
