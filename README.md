@@ -21,6 +21,7 @@ I like these libs:
 *  [EJS locals](https://github.com/RandomEtc/ejs-locals) templates for server-side stuff.
 *  I like to do most things client-side with REST, but keep my options open for static HTML. For example, I make a `get('login')` that serves an HTML login form & `post('/login')` that handles the form POST & JSON AJAX POST requests, both.
 *  I try to make things easy to disable by deleting files. For example,  if you don't need passport auth, just delete server/routes/auth.js.
+*  Tests are good practice, but I delete them when I need to get something up quick and the tests are totally bogus, like in the case of yeoman. You should probably add some tests once you get things fleshed out.
 
 ## new app setup
 
