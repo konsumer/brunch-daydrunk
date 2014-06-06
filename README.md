@@ -81,7 +81,7 @@ This app uses environment variables for settings. You can set them with the sett
 
 Here is what a sensible `.env` file looks like, for this app:
 ```
-<YOUR ENVIRONMENT VARIABLES EXPLANATION HERE>
+<YOUR DEMO ENVIRONMENT VARIABLES HERE>
 MONGO_URI=mongodb://<YADAYADA>
 
 ```
