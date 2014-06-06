@@ -1,3 +1,7 @@
+/**
+ * Mongoose User-model for local passport authentication
+ */
+
 var mongoose = require('mongoose'),
     passportLocalMongoose = require('passport-local-mongoose');
 
@@ -18,6 +22,10 @@ function makeToken(len) {
 }
 
 var User = new mongoose.Schema({
+    "email": {
+        type: mongoose.SchemaTypes.Email,
+        required: true
+    },
     "created": {
         type: Date,
         default: Date.now
