@@ -1,6 +1,6 @@
 # brunch-daydrunk
 
-Brunch skeleton with no testing, LESS styles, AngularJS, bootstrap 3 (with Angular javascript), plain Javascript, express 4, heroku
+Brunch skeleton with LESS styles, AngularJS, bootstrap 3 (with Angular javascript), plain Javascript, express 4, heroku, and no testing
 
 Sometimes you don't need tests, you just need to get your drunken idea up there before you sober up. You don't want a bunch of other people's code in your repo, just the basic stuff to get your hipster-app in teh wild for immediate consumption. You want just enough boilerplate to not have to look stuff up, but not so much you have to delete a bunch of crap. This is the skeleton for you, day-drunk hipster.
 
