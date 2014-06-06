@@ -33,7 +33,7 @@ In your project, you can delete everything above this line, and get a pro-lookin
 
 ## installation
 
-You just downloaded the repo, and probably want to get the project going on a local dev-server and deploy it to a remote webserver.  I will provide directions for [Heroku](http://www.heroku.com/) since it's super-easy & free for small instances. For other deploy methods, you will probably have to mess with `package.json`.
+You just downloaded the repo, and probably want to get the project going on a local dev-server and deploy it to a remote webserver.  I will provide directions for [Heroku](http://www.heroku.com/) since it's super-easy & free for small instances. For other deploy methods, you will probably have to mess with `package.json` or `server/index.js`.
 
 ## install
 
