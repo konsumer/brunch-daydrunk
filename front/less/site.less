@@ -39,7 +39,7 @@
 // @import "@{bootstrap_location}/badges.less";
 @import "@{bootstrap_location}/jumbotron.less";
 // @import "@{bootstrap_location}/thumbnails.less";
-// @import "@{bootstrap_location}/alerts.less";
+@import "@{bootstrap_location}/alerts.less";
 // @import "@{bootstrap_location}/progress-bars.less";
 // @import "@{bootstrap_location}/media.less";
 // @import "@{bootstrap_location}/list-group.less";
@@ -58,7 +58,18 @@
 @import "@{bootstrap_location}/responsive-utilities.less";
 
 // style file inputs ala bootstrap
-@import "bootstrap-file.less"
+@import "bootstrap-file.less";
 
 // nice mixin for vertically-centered box
-@import "vertical-align.less"
+@import "vertical-align.less";
+
+// style instant form validation
+input.ng-invalid.ng-dirty {
+	.alert-danger;
+}
+
+input.ng-valid.ng-dirty {
+	.alert-success;
+}
+
+

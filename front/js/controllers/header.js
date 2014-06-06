@@ -5,7 +5,7 @@ angular.module('controllers')
         $scope.login = function() {
             $modal.open({
                 templateUrl: 'views/userModal.html',
-                controller: LoginCtrl
+                controller: ModalLoginCtrl
             }).result.then(function(user) {
                 $scope.user = user;
             });
@@ -14,7 +14,7 @@ angular.module('controllers')
         $scope.register = function() {
             $modal.open({
                 templateUrl: 'views/userModal.html',
-                controller: RegisterCtrl
+                controller: ModalRegisterCtrl
             }).result.then(function(user) {
                 $scope.user = user;
             });
@@ -23,7 +23,7 @@ angular.module('controllers')
 
 
 
-var LoginCtrl = function($scope, $modalInstance, $http) {
+var ModalLoginCtrl = function($scope, $modalInstance, $http) {
     $scope.name = 'Login';
 
     $scope.ok = function() {
@@ -32,7 +32,11 @@ var LoginCtrl = function($scope, $modalInstance, $http) {
                 $modalInstance.close($scope.user);
             })
             .error(function(data, status, headers, config) {
-                $scope.error = data.message;
+                if (data && data.message) {
+                    $scope.error = data.message;
+                } else {
+                    $scope.error = "an error (" + status + ") occurred."
+                }
             });
 
     };
@@ -42,7 +46,7 @@ var LoginCtrl = function($scope, $modalInstance, $http) {
     };
 };
 
-var RegisterCtrl = function($scope, $modalInstance, $http) {
+var ModalRegisterCtrl = function($scope, $modalInstance, $http) {
     $scope.name = 'Register';
 
     $scope.ok = function() {

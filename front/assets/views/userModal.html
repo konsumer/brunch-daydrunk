@@ -2,18 +2,20 @@
 	<button class="close" ng-click="cancel()">X</button>
     <h3 class="modal-title">{{name}}</h3>
 </div>
-<div class="modal-body">
 
-<div class="form-group">
-  <input type="email" placeholder="email" class="form-control">
-</div>
+<form name="form" novalidate ng-init="origUser=user">
+	<div class="modal-body">
+		<div ng-if="error" class="alert alert-danger">{{error}}</div>
 
-<div class="form-group">
-  <input type="password" placeholder="password" class="form-control">
-</div>
+		<div class="form-group">
+		  <input ng-model="user.email" required type="email" placeholder="email" class="form-control">
+		</div>
 
-
-</div>
-<div class="modal-footer">
-    <button class="btn btn-primary" ng-click="ok()">OK</button>
-</div>
+		<div class="form-group">
+		  <input ng-model="user.password" required type="password" placeholder="password" class="form-control">
+		</div>
+	</div>
+	<div class="modal-footer">
+	    <button ng-disabled="form.$invalid || user == origUser" class="btn btn-primary" ng-click="ok()">OK</button>
+	</div>
+</form>

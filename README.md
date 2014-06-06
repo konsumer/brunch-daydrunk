@@ -62,12 +62,12 @@ All these are further documented in a README.md in each directory.
 front/         - All frontend files.
 	 js/       - All javascript. This will be combined into site.js.
 	 less/     - All LESS files. `site.less` gets built into site.css.
-	 views/    - Server-side EJS templates go in here. I use [EJS locals](https://github.com/RandomEtc/ejs-locals) so you can use layouts, if you want to.
 	 assets/   - Anything else. This gets translated into the webroot. This is where you should put images, fonts, etc.
 
 server/        - All server-side code.
 	  models/  - All mongoose models. They are auto-included from index.js. I included [URL & Email field-types](https://github.com/bnoguchi/mongoose-types)
 	  routes/  - All express routes. They are auto-included from index.js.
+	  views/    - Server-side EJS templates go in here. I use [EJS locals](https://github.com/RandomEtc/ejs-locals) so you can use layouts, if you want to.
 ```
 
 ## configuration

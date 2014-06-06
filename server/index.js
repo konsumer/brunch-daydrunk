@@ -28,7 +28,7 @@ app.use(cookieParser());
 
 // Use EJS-locals for the few server-side templates
 app.engine('ejs', ejsLocals);
-app.set('views', path.join(__dirname, '..', 'front', 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // configure session
