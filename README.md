@@ -49,7 +49,6 @@ You will need to know about these things to be super-effective with this codebas
 *  [express 4](http://expressjs.com/) the server uses this. See files in `server/` to work out how it all goes together.
 *  [Mongoose](http://mongoosejs.com/) for working with mongodb
 *  [passport](http://passportjs.org/) for auth
-*  [EJS locals](https://github.com/RandomEtc/ejs-locals) templates for server-side stuff.
 *  [bower](http://bower.io/) to track client-side dependencies
 *  [LESS](http://lesscss.org/) extends CSS with dynamic behavior such as variables, mixins, operations and functions. I use it to build an optimized [Bootstrap](http://getbootstrap.com/) and quickly & semantically generate the styles for this app.  I added some useful mixins. Be sure to check out files in `front/less/`
 *  [AngularJS](https://angularjs.org/) Superheroic JavaScript MVW Framework.
@@ -80,6 +79,7 @@ This app uses environment variables for settings. You can set them with the sett
 *  You can read more about [Heroku Configuration](https://devcenter.heroku.com/articles/config-vars).
 
 Here is what a sensible `.env` file looks like, for this app:
+
 ```
 <YOUR DEMO ENVIRONMENT VARIABLES HERE>
 MONGO_URI=mongodb://<YADAYADA>
