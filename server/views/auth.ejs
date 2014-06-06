@@ -1,0 +1,22 @@
+<% layout('layout/basic') -%>
+
+<div class="container" ng-controller="<%= title %>Ctl">
+    <h2><%= title %></h2>
+    <form name="form" ng-init="origUser=user" method="POST" action="">
+        <% if(typeof error !== 'undefined' && error){ %>
+            <div class="alert alert-danger"><%= error %></div>
+        <% } %>
+
+        <div class="form-group">
+          <input value="<%= (typeof user !== 'undefined' && typeof user.email !== 'undefined') ? user.email : '' %>" ng-model="user.email" required type="email" placeholder="email" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <input value="<%= (typeof user !== 'undefined' && typeof user.password !== 'undefined') ? user.password : '' %>" ng-model="user.password" required type="password" placeholder="password" class="form-control">
+        </div>
+        <button ng-disabled="form.$invalid || user == origUser" class="btn btn-primary" ng-click="ok()">OK</button>
+    </form>
+</div>
+
+<% block('footer', "<script>require('front/js/auth');</script>") -%>
+

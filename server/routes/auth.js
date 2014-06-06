@@ -12,7 +12,9 @@ module.exports = function(app) {
     passport.deserializeUser(models.User.deserializeUser());
 
     app.get('/register', function(req, res) {
-        res.render('register', {});
+        res.render('auth', {
+            title: 'Register'
+        });
     });
 
     app.post('/register', function(req, res) {
@@ -21,8 +23,10 @@ module.exports = function(app) {
         }), req.body.password, function(err, account) {
             if (req.xhr) {
                 if (err) {
-                    return res.render('register', {
-                        account: account
+                    return res.render('auth', {
+                        user: account,
+                        title: 'Register',
+                        error: err.message
                     });
                 }
                 res.redirect('/');
@@ -36,8 +40,9 @@ module.exports = function(app) {
     });
 
     app.get('/login', function(req, res) {
-        res.render('login', {
-            user: req.user
+        res.render('auth', {
+            user: req.user,
+            title: 'Login'
         });
     });
 
