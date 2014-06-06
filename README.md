@@ -8,7 +8,7 @@ I use this on [Heroku](http://www.heroku.com/) for a nice local build & reload d
 
 ## opinionated
 
-I have opinions on things. These opinions are related to performance, ease-of-use, and other factors. You can use this skeleton if you don't share all those opinions, but you will have to change stuff around. I like using the underlying web-tech, for the most part. I choose LESS over SASS (it's more like CSS, with a few extras) and plain CommonJS javascript over coffeescript or AMD. I choose EJS over Jade. I kept [notes](#wikiURL), just in case you aren't super-familiar, but don't mind my opinions.
+I have opinions on things. These opinions are related to performance, ease-of-use, and other factors. You can use this skeleton if you don't share all those opinions, but you will have to change stuff around. I like using the underlying web-tech, for the most part. I choose LESS over SASS (it's more like CSS, with a few extras) and plain CommonJS javascript over coffeescript or AMD. I choose EJS over Jade. I kept [notes](https://github.com/konsumer/brunch-daydrunk/wiki/Dev-Notes), just in case you aren't super-familiar, but don't mind my opinions.
 
 I like these libs:
 
