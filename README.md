@@ -73,7 +73,7 @@ server/        - All server-side code.
 
 ## configuration
 
-This app uses bower environment variables. You can set them with the settings panel on heroku, or edit the local file `.env` for your dev server.
+This app uses environment variables for settings. You can set them with the settings panel on heroku, or edit the local file `.env` for your dev server.
 
 *  You can set your heroku app to use all the local settings with `heroku config:push --overwrite --interactive`
 *  you can pull the heroku app's settings into  your `.env` file with `heroku config:pull --overwrite --interactive`.
