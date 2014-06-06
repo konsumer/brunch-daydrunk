@@ -8,8 +8,15 @@ var express = require('express'),
     mongoose = require('mongoose'),
     MongoStore = require('connect-mongostore')(session),
     path = require('path'),
+    fs = require('fs'),
     serveStatic = require('serve-static'),
     logger = require('morgan');
+
+// load config
+if (fs.existsSync(path.join(__dirname, '..', '.env'))) {
+    var env = require('node-env-file');
+    env('.env');
+}
 
 // mongoose models
 var models = require('./models');

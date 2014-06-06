@@ -12,7 +12,7 @@ exports.config = {
         javascripts: {
             defaultExtension: 'js',
             joinTo: {
-                'js/app.js': /^front\/js/,
+                'js/site.js': /^front\/js/,
                 'js/ie.js': /^bower_components[\\/](?=json3|es5-shim)/,
                 'js/vendor.js': /^bower_components[\\/](?!json3|es5-shim)/,
             }

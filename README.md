@@ -83,6 +83,6 @@ Here is what a sensible `.env` file looks like, for this app:
 ```
 <YOUR DEMO ENVIRONMENT VARIABLES HERE>
 MONGO_URI=mongodb://<YADAYADA>
-
+SESSION_SECRET=keyboardcat
 ```
 
