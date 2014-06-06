@@ -3,9 +3,8 @@
 <div class="container" ng-controller="<%= title %>Ctrl">
     <h2><%= title %></h2>
     <form name="form" ng-init="origUser=user" method="POST" action="">
-        <% if(typeof error !== 'undefined' && error){ -%>
-            <div class="alert alert-danger"><%= error -%></div>
-        <% } %>
+        <div ng-if="error" class="alert alert-danger">{{error}}</div>
+        <div ng-if="success" class="alert alert-success">{{success}}</div>
 
         <div class="form-group">
           <input value="<%= (typeof user !== 'undefined' && typeof user.email !== 'undefined') ? user.email : '' -%>" ng-model="user.email" required type="email" placeholder="email" class="form-control">
@@ -19,4 +18,3 @@
 </div>
 
 <% block('footer', "<script>require('front/js/auth');</script>") -%>
-

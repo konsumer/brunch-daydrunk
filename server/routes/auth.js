@@ -25,6 +25,10 @@ module.exports = function(app) {
         models.User.register(new models.User({
             email: req.body.email
         }), req.body.password, function(err, account) {
+            if (!err) {
+                // send email here, link to verify is http://URL/token/<req.user.token>
+            }
+
             if (req.xhr) {
                 if (err) {
                     return res.send(err);
