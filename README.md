@@ -8,11 +8,15 @@ I use this on [Heroku](http://www.heroku.com/) for a nice local build & reload d
 
 ## opinionated
 
-I have opinions on things. These opinions are related to performance, ease-of-use, and other factors. You can use this skeleton if you don't share all those opinions, but you will have to change stuff around. I like using the underlying web-tech, for the most part. I choose LESS over SASS (it's more like CSS, with a few extras) and plain CommonJS javascript over coffeescript or AMD. I choose EJS over Jade. I kept [notes](https://github.com/konsumer/brunch-daydrunk/wiki/Dev-Notes), just in case you aren't super-familiar, but don't mind my opinions.
+I have opinions on things. These opinions are related to performance, ease-of-use, and other factors. You can use this skeleton if you don't share all those opinions, but you will have to change stuff around. I like using the underlying web-tech, for the most part. I kept [notes](https://github.com/konsumer/brunch-daydrunk/wiki/Dev-Notes), just in case you aren't super-familiar, but don't mind my opinions.
 
-I like these libs:
+I make these choices:
 
 *  I like polyfills for making IE work right. I target the latest version of Chrome's CSS&JS (without vendor-prefixes), and then use polyfills to add support for everyone else. You may lose a tiny bit of performance, but also you gain code that will eventually work fast in any browser that decides to play nice with others.
+*  I choose LESS over SASS (it's more like CSS, with a few extras)
+*  I choose JS over Coffeescript
+*  I chose CommonJS over AMD.
+*  I choose EJS over Jade. It's easier to work with Angular than Handlebars, but is basically HTML + javascript. Nice.
 *  [AngularJS](https://angularjs.org/), no jQuery
 *  [LESS](http://lesscss.org/)
 *  [Bootstrap](http://getbootstrap.com/) & [Angular UI's bootstrap directives](http://angular-ui.github.io/bootstrap/)
