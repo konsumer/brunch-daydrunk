@@ -67,7 +67,7 @@ front/         - All frontend files.
 server/        - All server-side code.
 	  models/  - All mongoose models. They are auto-included from index.js. I included [URL & Email field-types](https://github.com/bnoguchi/mongoose-types)
 	  routes/  - All express routes. They are auto-included from index.js.
-	  views/    - Server-side EJS templates go in here. I use [EJS locals](https://github.com/RandomEtc/ejs-locals) so you can use layouts, if you want to.
+	  views/   - Server-side EJS templates go in here. I use [EJS locals](https://github.com/RandomEtc/ejs-locals) so you can use layouts, if you want to.
 ```
 
 ## configuration

@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+ * Main site app
+ */
+
 require('./betterErrors');
 
 angular.module('controllers', []);

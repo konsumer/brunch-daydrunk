@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * this handles server-side static pages for authenication
+ * app that handles server-side static pages for authenication
  */
 
 require('./betterErrors');
