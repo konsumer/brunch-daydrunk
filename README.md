@@ -6,7 +6,7 @@ I use this on [Heroku](http://www.heroku.com/) for a nice local build & reload d
 
 ## opinionated
 
-I have opinions on things. These opinions are related to performance, ease-of-use, and other factors. You can use this skeleton if you don't share all those opinions, but you will have to change stuff around. I like using the underlying web-tech, for the most part. I kept [notes](https://github.com/konsumer/brunch-daydrunk/wiki/Dev-Notes), just in case you aren't super-familiar, but don't mind my opinions.
+I have opinions on things. These opinions are related to performance, ease-of-use, and other factors. You can use this skeleton if you don't share all those opinions, but you will have to change stuff around. I like using the underlying web-tech, for the most part. I like structure & reusability, and hate repeating myself. I kept [notes](https://github.com/konsumer/brunch-daydrunk/wiki/Dev-Notes), just in case you aren't super-familiar, but don't mind my opinions.
 
 I make these choices:
 
