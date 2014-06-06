@@ -53,7 +53,7 @@ You will need to know about these things to be super-effective with this codebas
 *  [bower](http://bower.io/) to track client-side dependencies
 *  [LESS](http://lesscss.org/) extends CSS with dynamic behavior such as variables, mixins, operations and functions. I use it to build an optimized [Bootstrap](http://getbootstrap.com/) and quickly & semantically generate the styles for this app.  I added some useful mixins. Be sure to check out files in `front/less/`
 *  [AngularJS](https://angularjs.org/) Superheroic JavaScript MVW Framework.
-*  [Bootstrap](http://getbootstrap.com/) This app uses Bootstrap 3, with [Angular UI's bootstrap directives](http://angular-ui.github.io/bootstrap/). I added a few cool things like file input styling.
+*  [Bootstrap](http://getbootstrap.com/) This app uses Bootstrap 3, with [Angular UI's bootstrap directives](http://angular-ui.github.io/bootstrap/). I added a few cool things like file input & checkbox/radio styling.
 
 ## structure
 
