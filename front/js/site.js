@@ -9,6 +9,8 @@ require('./betterErrors');
 angular.module('controllers', []);
 require('./controllers/header');
 require('./controllers/index');
+require('./controllers/modal_login');
+require('./controllers/modal_register');
 
 angular.module('directives', []);
 
