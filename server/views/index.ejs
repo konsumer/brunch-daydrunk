@@ -1,0 +1,7 @@
+<% layout('layout/basic') -%>
+
+<%- partial('partials/header', {name:'index'}) -%>
+
+<ng-view></ng-view>
+
+<% block('footer', "<script>require('front/js/site')</script>") -%>
