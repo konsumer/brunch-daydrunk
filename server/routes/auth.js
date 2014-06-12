@@ -154,6 +154,14 @@ function verify(req, res){
     });
 }
 
+function check(req, res, next){
+    if (req.user && req.user.verified) {
+        next();
+    }else{
+        res.redirect('/login');
+    }
+}
+
 
 module.exports = function(app) {
     // init passport
@@ -174,5 +182,7 @@ module.exports = function(app) {
     app.get('/verify/:token', verify);
 
     // public interface
-    return {};
+    return {
+        check: check
+    };
 }
