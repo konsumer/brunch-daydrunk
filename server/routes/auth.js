@@ -2,8 +2,8 @@
  * provides basic passport-based mongoose local authentication
  */
 
-// mongoose models
 var passport = require('passport'),
+//    email = require('../email'),
     models = require('../models');
 
 
@@ -27,50 +27,11 @@ function registerPost(req, res){
     models.User.register(new models.User({
         email: req.body.email
     }), req.body.password, function(err, account) {
-        if (!err) {
-            // comment this for verification email
-            return res.send(account);
+        // dummy-stub, if you are not using email
+        if (!email){
+            function email(options, cb){
 
-            /*
-            // it is recommended to set MAIL_DOMAIN & MAIL_FROM environment variables
-            // otherwise I try to guess from heroku environment variables for Mailgun
-            var Mailgun = require('mailgun-js'),
-                fs = require('fs'),
-                path = require('path'),
-                ejs = require('ejs');
-
-            var domain = process.env.MAIL_DOMAIN || process.env.MAILGUN_SMTP_LOGIN.split('@').pop();
-            var from = process.env.MAIL_FROM || process.env.MAILGUN_SMTP_LOGIN;
-            var mailgun = new Mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: domain});
-            var urlbase = req.protocol + '://' + req.get('host');
-
-            var message = {
-                from: from,
-                to: account.email,
-                subject: "Account verification",
-                body: ejs.render(fs.readFileSync(path.join(__dirname, '..', 'views', 'email', 'register_txt')), {account:account, urlbase:urlbase}),
-                html: ejs.render(fs.readFileSync(path.join(__dirname, '..', 'views', 'email', 'register_html')), {account:account, urlbase:urlbase})
-            };
-            
-            console.log('sent verfication email', account.email, account.token);
-            mailgun.messages().send(message, function(err, body){
-                if (req.xhr) {
-                    if (err) {
-                        return res.send(err);
-                    }
-                    res.send(account);
-                } else {
-                    if (err) {
-                        return res.render('auth', {
-                            user: account,
-                            title: 'Register',
-                            error: err.message
-                        });
-                    }
-                    res.redirect('/');
-                }
-            });
-            */
+            }
         }
 
         if (req.xhr) {
