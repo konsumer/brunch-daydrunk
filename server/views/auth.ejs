@@ -1,8 +1,10 @@
 <% layout('layout/basic') -%>
 
+<%- partial('partials/header', {name:title.toLowerCase()}) -%>
+
 <div class="container" ng-controller="<%= title %>Ctrl">
     <h2><%= title %></h2>
-    <form name="form" ng-init="origUser=user" method="POST" action="">
+    <form name="form" ng-init="origUser={}" method="POST" action="">
         <div ng-if="error" class="alert alert-danger">{{error}}</div>
         <div ng-if="success" class="alert alert-success">{{success}}</div>
 

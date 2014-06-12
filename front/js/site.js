@@ -5,8 +5,10 @@
  */
 
 require('./betterErrors');
+require('./modalLinks');
 
 angular.module('controllers', []);
+require('./controllers/main');
 require('./controllers/header');
 require('./controllers/index');
 require('./controllers/modal_login');
@@ -20,6 +22,7 @@ angular.module('services', []);
 
 angular.module('app', [
     'ui.bootstrap',
+    'ui.gravatar',
     'ngRoute',
     'controllers',
     'directives',
@@ -31,7 +34,7 @@ angular.module('app', [
     $routeProvider
 
     .when('/', {
-        templateUrl: 'views/index.html',
+        templateUrl: 'partials/index.html',
         controller: 'IndexCtrl'
     })
 

@@ -1,6 +1,10 @@
 <% layout('layout/basic') -%>
 
-<div class="container">
+<%- partial('partials/header', {name:'token'}) -%>
+
+<div class="container" ng-controller="TokenCtrl">
     <h2>Email Verified.</h2>
-    <p>Thanks for verifying your account. Click <a href="/login">here</a>a>to login.</p>
+    <p>Thanks for verifying your account. Click <a href="/login">here</a> to login.</p>
 </div>
+
+<% block('footer', "<script>require('front/js/auth');</script>") -%>

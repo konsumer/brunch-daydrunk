@@ -3,7 +3,7 @@
  */
 
 var passport = require('passport'),
-//    email = require('../email'),
+    email = require('../email'),
     models = require('../models');
 
 
@@ -23,22 +23,48 @@ function registerForm(req, res){
  * @param  {Request}  req Express request object
  * @param  {Response} res Express response object
  */
-function registerPost(req, res){
+function registerHandle(req, res){
     models.User.register(new models.User({
         email: req.body.email
     }), req.body.password, function(err, account) {
         // dummy-stub, if you are not using email
         if (!email){
-            function email(options, cb){
-
+            email = function(options, cb){
+                console.log('Email not sent. Make sure you go enable email in server/routes/auth.js.', options);
+                cb(null, "Email not sent.");
             }
         }
 
+        var options = {
+            to: account.email,
+            subject: 'Verify your ' + process.env.SITE_NAME + ' account',
+            template: 'register',
+            account: account,
+            urlbase: req.protocol + '://' + req.get('host')
+        };
+
+
         if (req.xhr) {
             if (err) {
-                return res.send(err);
+                return res.send(500, err);
             }
-        } else {
+            email(options, function(err, body){
+                if (err) {
+                    return res.send(500, err);
+                }
+                res.send('OK');
+            });
+        }
+
+        if (err) {
+            return res.render('auth', {
+                user: account,
+                title: 'Register',
+                error: err.message
+            });
+        }
+        
+        email(options, function(err, body){
             if (err) {
                 return res.render('auth', {
                     user: account,
@@ -47,7 +73,8 @@ function registerPost(req, res){
                 });
             }
             res.redirect('/');
-        }
+        });
+        
     });
 }
 
@@ -67,7 +94,7 @@ function loginForm(req, res){
  * @param  {Request}  req Express request object
  * @param  {Response} res Express response object
  */
-function loginPost(req, res){
+function loginHandle(req, res){
     if (req.xhr) {
         res.send(req.user);
     } else {
@@ -106,8 +133,7 @@ function user(req, res){
  * @param  {Response} res Express response object
  */
 function verify(req, res){
-    var token = token: req.params.token;
-    models.User.findOneAndUpdate({ token: token }, { verified: true }, function(er, user) {
+    models.User.findOneAndUpdate({ token: req.params.token }, { verified: true }, function(er, user) {
         if (er) {
             return res.send(500, er);
         }
@@ -131,19 +157,21 @@ function verify(req, res){
 
 module.exports = function(app) {
     // init passport
+    app.use(passport.initialize());
+    app.use(passport.session());
     passport.use(models.User.createStrategy());
     passport.serializeUser(models.User.serializeUser());
     passport.deserializeUser(models.User.deserializeUser());
 
     // setup routes
     app.get('/register', registerForm);
-    app.post('/register', registerPost);
+    app.post('/register', registerHandle);
     app.get('/login', loginForm);
-    app.post('/login', passport.authenticate('local'), loginPost);
+    app.post('/login', passport.authenticate('local'), loginHandle);
     app.get('/logout', logout);
     app.post('/logout', logout);
     app.get('/user', user);
-    app.get('/verify/:token', token);
+    app.get('/verify/:token', verify);
 
     // public interface
     return {};

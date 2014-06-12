@@ -4,7 +4,6 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     chalk = require('chalk'),
     cookieParser = require('cookie-parser'),
-    ejsLocals = require('ejs-locals'),
     mongoose = require('mongoose'),
     MongoStore = require('connect-mongostore')(session),
     path = require('path'),
@@ -18,6 +17,12 @@ if (fs.existsSync(path.join(__dirname, '..', '.env'))) {
     env('.env');
 }
 
+if (!process.env.SITE_NAME){
+    process.env.SITE_NAME='Demo Site';
+    console.log('Set SITE_NAME environment variable to configure the name of your site for for server-side things.');
+}
+app.locals.site_name = process.env.SITE_NAME;
+
 // mongoose models
 var models = require('./models');
 
@@ -26,10 +31,7 @@ app.use(logger('dev'));
 app.use(bodyParser());
 app.use(cookieParser());
 
-// Use EJS-locals for the few server-side templates
-app.engine('ejs', ejsLocals);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+require('./templates')(app);
 
 // configure session
 app.use(session({

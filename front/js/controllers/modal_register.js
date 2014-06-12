@@ -1,6 +1,7 @@
 angular.module('controllers')
     .controller('ModalRegisterCtrl', function($scope, $modalInstance, $http) {
         $scope.name = 'Register';
+        $scope.user = {};
 
         $scope.ok = function() {
             $http.post('/register', $scope.user)

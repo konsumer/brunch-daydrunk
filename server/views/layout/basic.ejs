@@ -6,20 +6,21 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Your Site</title>
+    <title><%= site_name %></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="/css/site.css">
   </head>
-  <body ng-cloak ng-app="app">
-	<%- body -%>
+  <body ng-cloak ng-app="app" ng-controller="MainCtrl">
+
+    <%- body -%>
 
     <!--[if lt IE 9]>
     <script src="js/ie.js"></script>
     <![endif]-->
 
-    <script src="js/vendor.js"></script>
-    <script src="js/site.js"></script>
-    <%-blocks.footer%>
+    <script src="/js/vendor.js"></script>
+    <script src="/js/site.js"></script>
+    <%- blocks.footer %>
 </body>
 </html>
