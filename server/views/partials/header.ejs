@@ -3,7 +3,7 @@
     <ul class="nav navbar-nav navbar-right" ng-controller="HeaderCtl">
         <% if (name!='login'){ %><li ng-if="!user.email" ><a rel="modal" href="/login" ng-click="login()">login</a></li><% } %>
         <% if (name!='register'){ %><li ng-if="!user.email" ><a rel="modal" href="/register" ng-click="register()">register</a></li><% } %>
-        <li ng-if="user.email"><img gravatar-src="user.email" gravatar-size="50"></li>
+        <li ng-if="user.email"><img title="logged in as {{user.email}}" alt="{{user.email}}" gravatar-src="user.email" gravatar-size="50"></li>
         <li ng-if="user.email"><a href="/logout">logout</a></li>
     </ul>
 </header>
