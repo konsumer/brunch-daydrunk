@@ -1,4 +1,4 @@
-@bootstrap_location: '../../bower_components/bootstrap-less/less';
+
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
@@ -6,10 +6,14 @@
 
 
 // BOOTSTRAP - comment what you don't need
+@bootstrap_location: '../../bower_components/bootstrap-less/less';
 
 // Core variables and mixins
 @import "@{bootstrap_location}/variables.less";
 @import "@{bootstrap_location}/mixins.less";
+
+// overrides to variables & mixins
+@icon-font-path: '/fonts/bootstrap/';
 
 // Reset
 @import "@{bootstrap_location}/normalize.less";
@@ -60,6 +64,9 @@
 // style file inputs ala bootstrap
 @import "bootstrap-file.less";
 
+// cuter font-based check & radio inputs
+@import "bootstrap-font-checkbox.less";
+
 // nice mixin for vertically-centered box
 @import "vertical-align.less";
 
@@ -75,5 +82,13 @@ input.ng-valid.ng-dirty {
 body > header {
 	.nav {
 		margin-top: 10px;
+	}
+}
+
+.todo {
+	font-size: 20px;
+
+	span {
+		line-height: 30px;
 	}
 }

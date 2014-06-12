@@ -1,0 +1,29 @@
+input[type="radio"],
+input[type="checkbox"] {
+  display:none;
+
+  & + span:before{
+  	.glyphicon;
+    color: @btn-default-color;
+  }
+
+  &:checked + span:before{
+  	color: @brand-primary;
+  }
+}
+
+input[type="radio"] + span:before {
+  content: "\e165"; /* record */
+}
+
+input[type="radio"]:checked + span:before {
+  content: "\e089"; /* ok-circle */
+}
+
+input[type="checkbox"] + span:before {
+  content: "\e157"; /* unchecked */
+}
+
+input[type="checkbox"]:checked + span:before {
+  content: "\e067";; /* check */
+}
