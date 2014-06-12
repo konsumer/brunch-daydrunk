@@ -28,10 +28,14 @@ I make these choices:
 
 ## new app setup
 
-*  `mkdir PROJECT && cd !$`
+*  `mkdir PROJECT && cd PROJECT`
 *  `brunch new gh:konsumer/brunch-daydrunk`
-*  `npm install`
+*  `git init`
+*  `heroku create && heroku addons:add mailgun && heroku addons:add mongolab`
+*  `heroku config:pull --overwrite`
+*  `npm start`
 *  drink mimosas till you puke, while coding the next useful thing
+*  deploy with `git add -A && git commit -am "deploy" && git push heroku master`
 
 In your project, you can delete everything above this line, and get a pro-looking README, with no reference to this skeleton, that should be a enough for even a fresh-on-the-project developer to get started and understand how stuff fits together.
 
@@ -81,8 +85,15 @@ This app uses environment variables for settings. You can set them with the sett
 Here is what a sensible `.env` file looks like, for this app:
 
 ```
-<YOUR DEMO ENVIRONMENT VARIABLES HERE>
-MONGO_URI=mongodb://<YADAYADA>
+SITE_NAME="Demo Site"
 SESSION_SECRET=keyboardcat
+
+# from heroku config:pull --overwrite --interactive
+MAILGUN_API_KEY=<OMMITTED>
+MAILGUN_SMTP_LOGIN=<OMMITTED>
+MAILGUN_SMTP_PASSWORD=<OMMITTED>
+MAILGUN_SMTP_PORT=<OMMITTED>
+MAILGUN_SMTP_SERVER=smtp.mailgun.org
+MONGOLAB_URI=mongodb://<OMMITTED>
 ```
 
