@@ -30,8 +30,7 @@ I make these choices:
 
 ## new app setup
 
-*  `mkdir PROJECT && cd PROJECT`
-*  `brunch new gh:konsumer/brunch-daydrunk`
+*  `brunch new gh:konsumer/brunch-daydrunk PROJECT`
 *  `git init`
 *  `heroku create && heroku addons:add mailgun && heroku addons:add mongolab`
 *  `heroku config:pull --overwrite`
