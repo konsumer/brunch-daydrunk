@@ -3,7 +3,8 @@
  */
 
 var passport = require('passport'),
-    email = require('../email'),
+// uncomment for mailgun
+//   email = require('../email'),
     models = require('../models');
 
 
