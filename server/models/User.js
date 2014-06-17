@@ -33,4 +33,8 @@ User.plugin(passportLocalMongoose, {
     usernameField: 'email'
 });
 
+User.methods.updateToken = function(len){
+    this.token = makeToken(len);
+}
+
 module.exports = mongoose.model('User', User);
