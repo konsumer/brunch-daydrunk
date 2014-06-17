@@ -4,7 +4,7 @@
 
 var passport = require('passport'),
 // uncomment for mailgun
-   email = require('../email'),
+//   email = require('../email'),
     models = require('../models');
 
 // dummy-stub, if you are not using email
