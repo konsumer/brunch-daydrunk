@@ -22,7 +22,7 @@ function makeToken(len) {
 }
 
 var User = new mongoose.Schema({
-    "email": { type: mongoose.SchemaTypes.Email, required: true },
+//    "email": { type: mongoose.SchemaTypes.Email, required: true },
     "created": { type: Date, default: Date.now },
     "verified": { type: Boolean, default: false },
     "token": { type: String, default: makeToken }
