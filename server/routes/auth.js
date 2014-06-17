@@ -4,8 +4,16 @@
 
 var passport = require('passport'),
 // uncomment for mailgun
-//   email = require('../email'),
+   email = require('../email'),
     models = require('../models');
+
+// dummy-stub, if you are not using email
+if (!email){
+    var email = function(options, cb){
+        console.log('Email not sent. Make sure you go enable email in server/routes/auth.js.', options);
+        cb(null, "Email not sent.");
+    }
+}
 
 
 /**
@@ -32,7 +40,7 @@ function getUser(req, res){
 
 // GET /login - login form
 function getLogin(req, res){
-    res.render('auth', { title: 'Login' });
+    res.render('auth', { title: 'Login', messages:req.flash() });
 }
 
 // POST /login - process form, return form or redirect to /
@@ -45,7 +53,7 @@ function postLogin(req, res){
 
 // GET /register - register form
 function getRegister(req, res){
-    res.render('auth', { title: 'Register' });
+    res.render('auth', { title: 'Register', messages:req.flash() });
 }
 
 // POST /register - process form, return form
@@ -55,14 +63,6 @@ function postRegister(req, res){
     }), req.body.password, function(er, account) {
         if (er) {
             return res.message(err.message, 'error', '/register');
-        }
-
-        // dummy-stub, if you are not using email
-        if (!email){
-            email = function(options, cb){
-                console.log('Email not sent. Make sure you go enable email in server/routes/auth.js.', options);
-                cb(null, "Email not sent.");
-            }
         }
 
         var options = {
@@ -92,10 +92,10 @@ function logout(req, res){
 function getVerify(req, res){
     models.User.findOneAndUpdate({ token: req.params.token }, { verified: true }, function(er, user) {
         if (er) {
-            return res.message(er.message, 'error');
+            return res.message(er.message, 'error', '/login');
         }
         if (!user) {
-            return res.message('Verification code not found.', 'error');
+            return res.message('Verification code not found.', 'error', '/login');
         }
         
         res.message('User verified. Please login.', 'success', '/login');
@@ -113,10 +113,10 @@ function getForgot(req, res){
             if (!user) {
                 return res.message('Verification code not found, please try again.', 'error', '/forgot');
             }
-            res.render('forgot_password', {token: req.params.token});
+            res.render('forgot_password', {token: req.params.token, messages:req.flash()});
         });
     }else{
-        res.render('forgot_email');
+        res.render('forgot_email', {messages:req.flash()});
     }
 }
 
@@ -162,7 +162,7 @@ function postForgot(req, res){
                 if (er) {
                     return res.message(er.message, 'error', '/forgot');
                 }
-                return res.message('Email sent. Go check your email for a link to update your password.', 'success');
+                return res.message('Email sent. Go check your email for a link to update your password.', 'success', '/forgot');
             });
         });
     }

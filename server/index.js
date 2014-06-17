@@ -55,7 +55,9 @@ app.use(function(req, res, next){
             }
             return res.send({message:{type:type, text:message}});
         }
+
         req.flash(type, message);
+
         if (redirect !== ''){
             res.redirect(redirect || '/');
         }
