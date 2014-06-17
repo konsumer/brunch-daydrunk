@@ -85,7 +85,7 @@ function postRegister(req, res){
 // GET/POST /logout - logout, redir to /
 function logout(req, res){
     req.logout();
-    return res.message('User logged out.', 'success');
+    return res.message('User logged out.', 'success', '/login');
 }
 
 // GET /verify/:token - check token from email
