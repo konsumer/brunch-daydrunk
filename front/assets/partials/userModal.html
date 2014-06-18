@@ -15,15 +15,13 @@
 		<div class="form-group">
 		  <input ng-model="user.password" required type="password" placeholder="password" class="form-control">
 		</div>
-	</div>
-	<div class="modal-footer">
-	    <button ng-disabled="form.$invalid || user == origUser" class="btn btn-primary" ng-click="ok()">OK</button>
-	</div>
 
-	<div class="container">
 		<p ng-if="name!='Register'">Need to <a href="/register">register</a>?</p>
 		<p ng-if="name!='Login'">If you have an account already, <a href="/login">login</a>?</p>
 		<p>If you have forgotten your password, use <a href="/forgot">this</a>.</p>
+	</div>
+	<div class="modal-footer">
+	    <button ng-disabled="form.$invalid || user == origUser" class="btn btn-primary" ng-click="ok()">OK</button>
 	</div>
 </form>
 
