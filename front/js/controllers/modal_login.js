@@ -2,8 +2,10 @@ angular.module('controllers')
     .controller('ModalLoginCtrl', function($scope, $modalInstance, $http) {
         $scope.name = 'Login';
         $scope.user = {};
+        $scope.origUser = {};
 
-        $scope.ok = function() {            
+        $scope.ok = function() {
+            $scope.origUser = {email:$scope.user.email, password:$scope.user.password};
             $http.post('/login', $scope.user)
                 .success(function(data, status, headers, config) {
                     $modalInstance.close($scope.user);
@@ -13,7 +15,11 @@ angular.module('controllers')
                         $scope.error = data.message;
                     } else {
                         if (status){
-                            $scope.error = "an error (" + status + ") occurred.";
+                            if (status==401){
+                                $scope.error ="You are not authorized.";
+                            }else{
+                                $scope.error = "an error (" + status + ") occurred.";
+                            }
                         }
                     }
                 });
