@@ -13,6 +13,7 @@
     "brunch": "^1.7.14",
     "chalk": "^0.4.0",
     "clean-css-brunch": ">=1.7.1",
+    "connect-flash": "^0.1.1",
     "connect-mongostore": "^0.1.0",
     "cookie-parser": "^1.1.0",
     "ejs": "^1.0.0",

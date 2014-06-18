@@ -4,6 +4,8 @@ Sometimes you don't need tests, you just need to get your drunken idea up there 
 
 I use this on [Heroku](http://www.heroku.com/) for a nice local build & reload dev server, and it builds itself on deploy. With simple modification you can easily use it with [AppFog](https://www.appfog.com/) & other deployment methods, too.
 
+You can see a demo of it running, [here](http://brunch-daydrunk.herokuapp.com/).
+
 ## opinionated
 
 I have opinions on things. These opinions are related to performance, ease-of-use, and other factors. You can use this skeleton if you don't share all those opinions, but you will have to change stuff around. I like using the underlying web-tech, for the most part. I like structure & reusability, and hate repeating myself. I kept [notes](https://github.com/konsumer/brunch-daydrunk/wiki), just in case you aren't super-familiar, but don't mind my opinions.
@@ -28,10 +30,14 @@ I make these choices:
 
 ## new app setup
 
-*  `mkdir PROJECT && cd !$`
-*  `brunch new gh:konsumer/brunch-daydrunk`
-*  `npm install`
+*  `brunch new gh:konsumer/brunch-daydrunk PROJECT`
+*  `git init`
+*  `heroku create && heroku addons:add mailgun && heroku addons:add mongolab`
+*  `heroku config:pull --overwrite`
+*  `npm start`
 *  drink mimosas till you puke, while coding the next useful thing
+*  `heroku config:push --overwrite --interactive` to send your local vars
+*  deploy with `git add -A && git commit -am "deploy" && git push heroku master`
 
 In your project, you can delete everything above this line, and get a pro-looking README, with no reference to this skeleton, that should be a enough for even a fresh-on-the-project developer to get started and understand how stuff fits together.
 
@@ -81,8 +87,15 @@ This app uses environment variables for settings. You can set them with the sett
 Here is what a sensible `.env` file looks like, for this app:
 
 ```
-<YOUR DEMO ENVIRONMENT VARIABLES HERE>
-MONGO_URI=mongodb://<YADAYADA>
+SITE_NAME=Demo Site
 SESSION_SECRET=keyboardcat
+
+# from heroku config:pull --overwrite --interactive
+MAILGUN_API_KEY=<OMMITTED>
+MAILGUN_SMTP_LOGIN=<OMMITTED>
+MAILGUN_SMTP_PASSWORD=<OMMITTED>
+MAILGUN_SMTP_PORT=<OMMITTED>
+MAILGUN_SMTP_SERVER=smtp.mailgun.org
+MONGOLAB_URI=mongodb://<OMMITTED>
 ```
 

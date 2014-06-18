@@ -17,6 +17,10 @@
         </div>
         <button ng-disabled="form.$invalid || user == origUser" class="btn btn-primary" ng-click="ok()">OK</button>
     </form>
+
+    <p>If you have forgotten your password, use <a href="/forgot">this</a>.</p>
 </div>
+
+
 
 <% block('footer', "<script>require('front/js/auth');</script>") -%>
