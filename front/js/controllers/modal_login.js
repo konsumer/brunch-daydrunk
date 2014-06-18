@@ -3,9 +3,7 @@ angular.module('controllers')
         $scope.name = 'Login';
         $scope.user = {};
 
-        $scope.ok = function() {
-            console.log('login', $scope.user);
-            
+        $scope.ok = function() {            
             $http.post('/login', $scope.user)
                 .success(function(data, status, headers, config) {
                     $modalInstance.close($scope.user);
