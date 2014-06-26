@@ -1,5 +1,4 @@
-angular.module('controllers').controller('RegisterCtrl', function($scope, $http) {
-
+module.exports = function($scope, $http) {
     $scope.ok = function() {
         $http.post('/register', $scope.user)
             .success(function(data, status, headers, config) {
@@ -13,5 +12,4 @@ angular.module('controllers').controller('RegisterCtrl', function($scope, $http)
                 }
             });
     }
-
-});
+};

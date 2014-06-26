@@ -5,28 +5,16 @@
  */
 
 require('./betterErrors');
-require('./modalLinks');
-
-angular.module('controllers', []);
-require('./controllers/main');
-require('./controllers/header');
-require('./controllers/login');
-require('./controllers/register');
-require('./controllers/token');
-require('./controllers/modal_login');
-require('./controllers/modal_register');
-
-angular.module('directives', []);
-
-angular.module('filters', []);
-
-angular.module('services', []);
 
 angular.module('app', [
 	'ui.bootstrap',
-	'ui.gravatar',
-    'controllers',
-    'directives',
-    'filters',
-    'services'
+	'ui.gravatar'
 ])
+
+app.controller('HeaderCtl', require('./controllers/header'));
+app.controller('MainCtl', require('./controllers/main'));
+app.controller('ModalLoginCtl', require('./controllers/modal_login'));
+app.controller('ModalRegisterCtl', require('./controllers/modal_register'));
+app.controller('LoginCtl', require('./controllers/login'));
+app.controller('RegisterCtl', require('./controllers/register'));
+app.controller('TokenCtl', require('./controllers/token'));

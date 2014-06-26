@@ -1,5 +1,4 @@
-angular.module('controllers').controller('LoginCtrl', function($scope, $http) {
-
+module.exports = function($scope, $http) {
     $scope.ok = function() {
         $http.post('/login', $scope.user)
             .success(function(data, status, headers, config) {
@@ -14,4 +13,4 @@ angular.module('controllers').controller('LoginCtrl', function($scope, $http) {
             });
     }
 
-});
+};

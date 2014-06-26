@@ -1,3 +1,3 @@
-angular.module('controllers').controller('IndexCtrl', function($scope) {
+module.exports = function($scope) {
 
-});
+};

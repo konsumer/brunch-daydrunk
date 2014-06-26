@@ -1,3 +1,3 @@
-angular.module('controllers').controller('MainCtrl', function($scope) {
+module.exports = function($scope) {
 	$scope.user = {};
-});
+};

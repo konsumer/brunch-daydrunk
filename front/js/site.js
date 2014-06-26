@@ -5,40 +5,28 @@
  */
 
 require('./betterErrors');
-require('./modalLinks');
 
-angular.module('controllers', []);
-require('./controllers/main');
-require('./controllers/header');
-require('./controllers/index');
-require('./controllers/modal_login');
-require('./controllers/modal_register');
-
-angular.module('directives', []);
-
-angular.module('filters', []);
-
-angular.module('services', []);
-
-angular.module('app', [
+var app = angular.module('app', [
     'ui.bootstrap',
     'ui.gravatar',
     'ngRoute',
-    'controllers',
-    'directives',
-    'filters',
-    'services'
-])
+]);
 
-.config(function($routeProvider) {
+app.config(function($routeProvider) {
     $routeProvider
 
     .when('/', {
         templateUrl: 'partials/index.html',
-        controller: 'IndexCtrl'
+        controller: 'IndexCtl'
     })
 
     .otherwise({
         redirectTo: '/'
     });
-})
+});
+
+app.controller('HeaderCtl', require('./controllers/header'));
+app.controller('MainCtl', require('./controllers/main'));
+app.controller('IndexCtl', require('./controllers/index'));
+app.controller('ModalLoginCtl', require('./controllers/modal_login'));
+app.controller('ModalRegisterCtl', require('./controllers/modal_register'));
