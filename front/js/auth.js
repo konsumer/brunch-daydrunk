@@ -4,9 +4,7 @@
  * app that handles server-side static pages for authenication stuff
  */
 
-require('./betterErrors');
-
-angular.module('app', [
+var app = angular.module('app', [
 	'ui.bootstrap',
 	'ui.gravatar'
 ])

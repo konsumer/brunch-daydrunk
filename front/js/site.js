@@ -4,8 +4,6 @@
  * Main site app
  */
 
-require('./betterErrors');
-
 var app = angular.module('app', [
     'ui.bootstrap',
     'ui.gravatar',
