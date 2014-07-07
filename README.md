@@ -31,6 +31,7 @@ I make these choices:
 ## new app setup
 
 *  `brunch new gh:konsumer/brunch-daydrunk PROJECT`
+*  `cd PROJECT`
 *  `git init`
 *  `heroku create && heroku addons:add mailgun && heroku addons:add mongolab`
 *  `heroku config:pull --overwrite`
