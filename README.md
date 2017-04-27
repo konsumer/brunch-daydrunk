@@ -26,7 +26,7 @@ I make these choices:
 *  [EJS locals](https://github.com/RandomEtc/ejs-locals) templates for server-side stuff.
 *  I like to do most things client-side with REST, but keep my options open for static HTML. For example, I make a `get('/login')` that serves an HTML login form & `post('/login')` that handles the form POST & JSON AJAX POST requests, both.
 *  I try to make things easy to disable by deleting files, and easy to drop into new projects. For example, if you don't need passport auth, just delete server/routes/auth.js.
-*  Unit tests are good practice, but I delete them when I need to get something up quick and the tests are totally bogus, like in the case of yeoman. You should probably add some tests once you get things fleshed out. I recommend [mocha](http://visionmedia.github.io/mocha/)+[chai](http://chaijs.com/)+[karma](http://karma-runner.github.io/), so you can be all easy-breazy about testing style, and not lock your fellow devs (or your daydrunk-self) into a particular style. This will make it so everyone can write TDD, BDD, QUnit, assert, expect, should, etc tests in whatever style makes them happy.
+*  Unit tests are good practice, but I delete them when I need to get something up quick and the tests are totally bogus, like in the case of yeoman. You should probably add some tests once you get things fleshed out. I recommend [mocha](http://mochajs.org/)+[chai](http://chaijs.com/)+[karma](http://karma-runner.github.io/), so you can be all easy-breazy about testing style, and not lock your fellow devs (or your daydrunk-self) into a particular style. This will make it so everyone can write TDD, BDD, QUnit, assert, expect, should, etc tests in whatever style makes them happy.
 
 ## new app setup
 
